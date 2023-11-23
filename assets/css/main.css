@@ -1895,6 +1895,9 @@ section {
   .hero .info h2 {
     font-size: 36px;
   }
+  .card-img{
+    width: 40%;
+  }
 }
 
 .hero .info p {

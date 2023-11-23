@@ -175,3 +175,9 @@ button.delete:hover, button.update:hover, button.loadinfo:hover {
     min-width: 140px;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .tdda th{
+        font-size: 8px;
+    }
+  }
