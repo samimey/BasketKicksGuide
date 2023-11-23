@@ -12,6 +12,9 @@
   <!-- Favicons -->
   <link href="assets/img/favico.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Include Bootstrap CSS (assuming you have it installed) -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,14 +74,114 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <section class="sample-page">
-      <div class="container">
+    <section class="sample-page" style="height: auto; padding-bottom: 50px; padding-top: 25px;">
+  
 
-        <p>
-          You can duplicate this sample page and create any number of inner pages you like! , <span>fuera de servicio</span>
-        </p>
+                <h2 style="text-align: center; padding-bottom: 10px;">registro y control de empleados</h2>
 
-      </div>
+          <div class="botonesprincipal" style="text-align: center;">
+            <button id="desplegarformulario" class="btn btn-primary" onclick="desplegue()">agregar empleado</button>
+            <button id="buscar" class="btn btn-primary" onclick="buscar()">buscar empleado</button>
+          </div>
+          
+          <div class="container-buscar" style="display: none;">
+            <div class="modal-body text-center">
+              <!-- Contenido del modal -->
+              <label class="bstilo" for="buscarEmpleado"style="display: none;  padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #fff; margin-top: 30px; "></label>>Ingrese el ID del empleado:</label>
+              <input type="text" id="buscarEmpleado" class="form-control">
+              <button type="button" class="btn btn-primary mt-lg-2"  onclick="buscarEmpleados()">Buscar</button>
+              <div class="container-fluid">
+                <h2>Información encontrada</h2>
+                <table class="tdda" id="tdato">
+                  <thead>
+                    <tr>
+        
+              
+                    </tr>
+                  </thead>
+                  
+                </table>
+                
+              </div>
+
+              <!-- Puedes mostrar los resultados de la búsqueda aquí -->
+            </div>
+          </div>
+
+          
+          <div class="container2" style="display: none; ">
+              
+              <form action="/guardar.php" method="POST">
+                <div class="mb-3">
+                  <label for="nombre">Documento:</label>
+                  <input type="text" id="cc" name="cc" required>
+              </div>
+                  <div class="mb-3">
+                      <label for="nombre">Nombre:</label>
+                      <input type="text" id="nombre" name="nombre" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email">Correo Electrónico:</label>
+                      <input type="email" id="email" name="email" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="nombre">Direccion:</label>
+                    <input type="text" id="Direccion" name="Direccion" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre">Telefono:</label>
+                    <input type="text" id="Telefono" name="Telefono" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre">Sueldo Base:</label>
+                    <input type="text" id="Sueldo" name="Sueldo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rol">Tipo Empleado:</label>
+                    <select id="Tipo" name="Tipo">
+                        <option value="fijo">fijo</option>
+                        <option value="contracto">contratos</option>
+                    </select>
+                </div>
+                  <button type="button" onclick="crearobjecto()">Registrar</button>
+
+              </form>
+          </div>
+
+              <div class="container-fluid">
+                <h2>Información</h2>
+                <table class="tdda" id="tdatos">
+                  <thead>
+                    <tr>
+                      <th>DI</th>
+                      <th>Nombre</th>
+                      <th>Correo Electrónico</th>
+                      <th>Direccion</th>
+                      <th>Telefono</th>
+                      <th>Sueldo</th>
+                      <th>Tipos</th> 
+                    
+              
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    
+                  </tbody>
+                </table>
+                <div class="container-buttons">
+                  <button class="delete" onclick="eliminarFilaSeleccionada()">Eliminar</button>
+                  <button class="update" onclick="actualizarFilaSeleccionada()">Actualizar</button>
+                  <button class="loadinfo" onclick="cargarDesdeLocalStorage()">cargar</button>
+                </div>
+              </div>
+
+          
+          
+          
+        
+
+      
     </section>
 
   </main><!-- End #main -->
@@ -176,6 +279,14 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/js/persona.js"></script>
+
+  <script src="assets/js/controlador_main.js"></script>
+  <script
+    src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+  </script>
+
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
